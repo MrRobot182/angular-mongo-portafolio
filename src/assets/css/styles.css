@@ -86,6 +86,7 @@ nav ul li:hover{
     margin: 0 auto;
     background: white;
     min-height: calc(100vh - 90px);
+    padding: 30px;
 }
 
 /*Footer*/
@@ -97,6 +98,35 @@ footer{
     color: white;
 }
 
+/*Sobre mi*/
+#title{
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+}
 
+#title h1{
+    font-family: Finger, Arial;
+    font-size: 60px;
+    border-bottom: 1px solid gray ;
+}
 
+#title h2{
+    font-size: 25px;
+    color: gray;
+    margin: 15px auto;
+}
+
+article.about{ 
+    width: 70%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.about h2{
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+}
 
