@@ -1,3 +1,102 @@
-body {
-    background: gray;
+@font-face{
+    font-family: "Yanone";
+    src: url("../fonts/yanone.ttf");
 }
+
+@font-face{
+    font-family: "Finger";
+    src: url("../fonts/finger.ttf");
+}
+
+@font-face{
+    font-family: "Titilium";
+    src: url("../fonts/titilium.ttf");
+}
+
+/*General*/
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Yanone, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background: url(../img/pattern.png);
+    background-attachment: fixed;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+/*Nav*/
+nav{
+    width: 100%;
+    height: 90px;
+    background: #2f64a3;
+    /*position: fixed;*/
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav ul li{
+    display: inline-block;
+    transition: all 750ms;
+}
+
+nav ul li a{
+    line-height: 90px;
+    padding: 0 20px;
+    color: white;
+}
+
+nav ul li:hover{
+    background: #203c5e;
+}
+
+#logo:hover, #logo a:hover {
+    background: transparent;
+    cursor: default;
+    color: #203c5e;
+    transform: scale(1.50, 1.50);
+}
+
+#logo a{
+    font-family: Finger;
+    font-size: 30px;
+    transition: color 500ms, transform 500ms;
+    line-height: 60px;
+}
+
+.active {
+    background: #30588a;
+    transition: background 250ms;
+}
+
+/*Container*/
+#content{
+    width: 80%;
+    margin: 0 auto;
+    background: white;
+    min-height: calc(100vh - 90px);
+}
+
+/*Footer*/
+footer{
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    background: #203c5e;
+    color: white;
+}
+
+
+
+
