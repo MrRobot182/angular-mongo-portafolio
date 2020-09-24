@@ -130,3 +130,40 @@ article.about{
     border-bottom: 1px solid gray;
 }
 
+form{ 
+    width: 50%;
+}
+
+form label{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+form input, form textarea{ 
+    width: 100%;
+    padding: 10px 0;
+}
+
+form input[type="submit"]{
+    border: none;
+    color: white;
+    background: #2f64a3;
+    transition: all 0.5s;
+}
+
+form input[type="submit"]:hover{
+    background: #203c5e;
+    cursor: pointer;
+}
+
+form input[disabled]{
+    background: #6e9dd8;
+}
+
+form input[disabled]:hover{
+    background: #6e9dd8;
+    cursor: not-allowed;
+}
+
+
