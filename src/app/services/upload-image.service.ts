@@ -1,19 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Global } from './global';
-import { chdir } from 'process';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class UploadImageService {
 
   public url:string;
 
-  constructor() { 
+  constructor( private _http: HttpClient ) { 
     this.url = Global.url;
   }
 
+  makeFileRequest(url: string, file: Array<File>, name: string){
+    var fd = new FormData();
+    fd.append(name, file[0]);
+    let httpHdrs = new HttpHeaders().set("Content-Disposition","form-data");
+    return this._http.post(url, fd);
+  }
+
+  /*
   makeFileRequest(url: string, body: Array<string>, files: Array<File>, name: string){
     return new Promise((resolve, reject)=>{
-      var formData:any = new FormData();
+      var formData = new FormData();
       var xhr = new XMLHttpRequest();
 
       for(let i=0; i<files.length; i++){
@@ -34,5 +42,5 @@ export class UploadImageService {
       xhr.open('POST', url, true);
       xhr.send(formData);
     })
-  }
+  }*/
 }
