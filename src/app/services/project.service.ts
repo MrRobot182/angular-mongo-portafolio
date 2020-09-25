@@ -19,11 +19,16 @@ export class ProjectService {
 
   testService(){
     return "Testing project service";
-  }
+  } 
 
   saveProject(project: Project): Observable<any>{
     let body = JSON.stringify(project);
     let httpHdrs = new HttpHeaders().set("Content-Type","application/json");
     return this._http.post(this.url+'save-project', body, { headers: httpHdrs});
+  }
+
+  getProjects(): Observable<any>{
+    let httpHdrs = new HttpHeaders().set("Content-Type","application/json");
+    return this._http.get(this.url+"projects", {headers: httpHdrs});    
   }
 }

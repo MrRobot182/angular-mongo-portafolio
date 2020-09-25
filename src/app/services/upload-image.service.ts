@@ -11,36 +11,13 @@ export class UploadImageService {
     this.url = Global.url;
   }
 
-  makeFileRequest(url: string, file: Array<File>, name: string){
-    var fd = new FormData();
-    fd.append(name, file[0]);
+  makeFileRequest(id: string, file: Array<File>, name: string){
+    let urlUI = this.url+"upload-image/"+id;    
     let httpHdrs = new HttpHeaders().set("Content-Disposition","form-data");
-    return this._http.post(url, fd);
+    let fd = new FormData();
+    
+    fd.append(name, file[0]);
+    
+    return this._http.post(urlUI, fd);
   }
-
-  /*
-  makeFileRequest(url: string, body: Array<string>, files: Array<File>, name: string){
-    return new Promise((resolve, reject)=>{
-      var formData = new FormData();
-      var xhr = new XMLHttpRequest();
-
-      for(let i=0; i<files.length; i++){
-        formData.append(name, files[i],files[i].name)
-      }
-
-      xhr.onreadystatechange = ()=>{
-        if(xhr.readyState == 4){
-          if(xhr.status == 200){
-            resolve(JSON.parse(xhr.response));
-          }
-          else{
-            reject(xhr.response);
-          }
-        }
-      }
-
-      xhr.open('POST', url, true);
-      xhr.send(formData);
-    })
-  }*/
 }
