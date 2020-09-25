@@ -2,14 +2,14 @@
     <h2>Proyectos</h2>
     <div class="grid">        
         <div *ngFor="let project of projects" class="card">
-            <img src="{{url+'get-image/'+project.image}}" alt="" *ngIf="project.image">            
+            <img src="{{url+'get-image/'+project.image}}" alt="Imagen no encontrada" *ngIf="project.image">            
             <div class="card-content">
                 <span class="no-image" *ngIf="!project.image">Sin imagen</span>
                 <h4>{{project.name}}</h4>
                 <p>{{project.year}}</p>
             </div>            
             <div class="card-footer">
-                <a href="">Ver más</a>
+                <a [routerLink]="['/project', project._id]">Ver más</a>
             </div>
         </div>
     </div>   
