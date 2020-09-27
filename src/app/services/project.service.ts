@@ -10,11 +10,13 @@ import { Global } from './global'
 export class ProjectService {
 
   public url: string;
+  private httpHdrs: HttpHeaders;
 
   constructor(
     private _http: HttpClient
   ) { 
     this.url = Global.url;
+    this.httpHdrs = new HttpHeaders().set("Content-Type","application/json");
   }
 
   testService(){
@@ -23,17 +25,18 @@ export class ProjectService {
 
   saveProject(project: Project): Observable<any>{
     let body = JSON.stringify(project);
-    let httpHdrs = new HttpHeaders().set("Content-Type","application/json");
-    return this._http.post(this.url+'save-project', body, { headers: httpHdrs});
+    return this._http.post(this.url+'save-project', body, { headers: this.httpHdrs});
   }
 
   getProjects(): Observable<any>{
-    let httpHdrs = new HttpHeaders().set("Content-Type","application/json");
-    return this._http.get(this.url+"projects", {headers: httpHdrs});    
+    return this._http.get(this.url+"projects", {headers: this.httpHdrs});    
   }
 
   getProject(id: string): Observable<any>{
-    let httpHdrs = new HttpHeaders().set("Content-Type","application/json");
-    return this._http.get(this.url+"project/"+id, {headers: httpHdrs}); 
+    return this._http.get(this.url+"project/"+id, {headers: this.httpHdrs}); 
+  }
+
+  deleteProject(id: string): Observable<any>{
+    return this._http.delete(this.url+"project/"+id, {headers: this.httpHdrs});
   }
 }

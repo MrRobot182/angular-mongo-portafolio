@@ -42,6 +42,9 @@ export class CreateComponent implements OnInit {
             this.status = true;
             form.reset();
           })*/
+          this.project = response.project;
+          console.log(this.project)
+
           this._uploadService.makeFileRequest(response.project._id, this.filesToUpload, 'image').subscribe(
             response => {
               this.imageStatus = true;

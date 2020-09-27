@@ -6,6 +6,7 @@ import { CreateComponent } from './components/create/create.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { ErrorComponent } from './components/error/error.component';
+import { EditComponent } from './components/edit/edit.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'create', component: CreateComponent},
   {path: 'projects', component: ProjectsComponent},
   {path: 'project/:id', component: DetailComponent},
+  {path: 'edit/:id', component: EditComponent},
   {path: '**', component: ErrorComponent}
 ];
 

@@ -1,7 +1,7 @@
 <div class="content">
     <h2>{{title}}</h2>
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
-        <div class="success" *ngIf="status">Proyecto registrado exitosamente, consulta proyectos <a [routerLink]="['/projects']">aquí</a></div>
+        <div class="success" *ngIf="status">Proyecto registrado exitosamente, consulta proyectos <a [routerLink]="['/project/',project._id]">aquí</a></div>
         <div class="failed" *ngIf="false">Error al registrar proyecto</div>
         <div class="failed" *ngIf="false">No se registro la imagen</div>
         <p>

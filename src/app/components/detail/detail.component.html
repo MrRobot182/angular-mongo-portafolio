@@ -1,7 +1,9 @@
 <div class="content">
     <div class="project-image">
+        
         <img src="{{url+'get-image/'+project.image}}" alt="Imagen no encontrada" *ngIf="project.image">
         <p *ngIf="!project.image">Sin imagen</p>
+        
     </div>     
     <div class="project-card">
         <div class="project-data">
@@ -12,8 +14,9 @@
             <p class="description">{{project.description}}</p> 
         </div>
         <div class="project-buttons">
-            <a class="edit-btn" href="">Editar</a>
-            <a class="del-btn" href="">Eliminar</a>
+            <a [routerLink]="['/edit',project._id]" class="edit-btn">Editar</a>
+            <a (click)="deleteProject(project._id)" class="del-btn">Eliminar</a>
+            <a [routerLink]="['/projects']" class="back-btn">Volver</a>
         </div>
     </div>
 </div>
