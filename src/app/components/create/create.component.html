@@ -3,7 +3,7 @@
     <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
         <div class="success" *ngIf="status">Proyecto registrado exitosamente, consulta proyectos <a [routerLink]="['/project/',project._id]">aquí</a></div>
         <div class="failed" *ngIf="false">Error al registrar proyecto</div>
-        <div class="failed" *ngIf="false">No se registro la imagen</div>
+        <div class="failed" *ngIf="!imgUploaded">Se necesita subir una imagen</div>        
         <p>
             <label for="name">Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>

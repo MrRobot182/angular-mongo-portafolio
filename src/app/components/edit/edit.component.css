@@ -1,0 +1,44 @@
+h2{ 
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+form { 
+    margin: 0 auto;
+}
+
+span{
+    color: red;
+    font-size: 15px;
+}
+
+.success{
+    color: #1a7411;
+}
+
+.success a {
+    color: #2cc51e;
+}
+
+.failed{
+    color: red;
+}
+
+.img-edit-area{    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 0;
+    gap: 20px
+}
+
+.img-edit img{
+    max-width: 100%;
+}
+
+.img-input{
+    margin: auto auto;
+}
+
+
+
