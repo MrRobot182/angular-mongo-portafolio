@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  public sliderWidth: number;
+  public loaded: boolean;
+
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
 
+  sliderLoad(){
+    this.loaded = true; 
+  }
+
+  sliderUnload(){
+    this.loaded = false; 
+  }
+
+  getAuthor(event){
+    console.log(event);
+  }
 }

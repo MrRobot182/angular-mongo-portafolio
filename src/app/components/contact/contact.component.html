@@ -1,1 +1,11 @@
-<p>contact works!</p>
+<h1>Contacto</h1>
+<hr>
+<div class="content">
+    <input type="number" [(ngModel)]="sliderWidth" (change)="sliderLoad()" (input)="sliderUnload()"/>
+    <div *ngIf="loaded">
+        <app-slider [parentWidth]="sliderWidth" (launch)="getAuthor($event)"></app-slider>
+    </div>
+
+
+    
+</div>

@@ -52,7 +52,7 @@ export class EditComponent implements OnInit {
 
   onSubmit(form){
     this._projectService.updateProject(this.project).subscribe(
-      response => {
+      response => {                
         console.log(response.project);
         this.project = response.project;
 
@@ -61,7 +61,7 @@ export class EditComponent implements OnInit {
             response => console.log(response), error => console.log(error) 
           )
         }
-
+        
         this._router.navigateByUrl('project/'+this.project._id);
 
       },
